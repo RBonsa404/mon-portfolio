@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" fill="none">
+  <rect width="320" height="400" fill="#10151F"/>
+  <rect x="1" y="1" width="318" height="398" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+  <!-- Cadre g�om�trique -->
+  <path d="M0 0 H24 V24" stroke="#2F7CFF" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M320 0 H296 V24" stroke="#2F7CFF" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M0 400 H24 V376" stroke="#2F7CFF" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M320 400 H296 V376" stroke="#2F7CFF" stroke-width="2" fill="none" opacity="0.7"/>
+  <!-- Silhouette -->
+  <circle cx="160" cy="140" r="48" fill="#141A26" stroke="rgba(47,124,255,0.3)" stroke-width="1"/>
+  <path d="M80 340 Q80 240 160 240 Q240 240 240 340" fill="#141A26" stroke="rgba(47,124,255,0.2)" stroke-width="1"/>
+  <!-- Label terminal -->
+  <text x="160" y="370" text-anchor="middle" font-family="monospace" font-size="12" fill="#5C6779">profile.jpg</text>
+  <circle cx="130" cy="370" r="3" fill="#3DDC84"/>
+</svg>
