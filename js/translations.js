@@ -5,7 +5,7 @@
 
 const translations = {
   fr: {
-  /* Navigation */
+    /* Navigation */
     nav_home: "Accueil",
     nav_about: "À propos",
     nav_education: "Formation",
@@ -35,15 +35,25 @@ const translations = {
 
     /* Skills categories */
     skills_cat_languages: "Langages & Frameworks",
-    skills_cat_database: "Base de données",
+    skills_cat_database: "Bases de données",
+    skills_cat_architecture: "Architecture & Design",
     skills_cat_office: "Bureautique",
-    skills_cat_tools: "Outils & logiciels",
-    skills_cat_os: "Systèmes d'exploitation",
+    skills_cat_tools: "Outils & Logiciels",
+    skills_cat_os: "Systèmes & Réseaux",
 
-    /* Project status */
+    /* Project status & badges */
     status_completed: "Terminé",
     status_in_progress: "En cours",
+    status_idea: "Idée / En réflexion",
     status_confidential: "Confidentiel",
+    badge_hackathon: "Hackathon DigiCoop 2026",
+
+    /* Project actions */
+    open_project: "Ouvrir",
+    copy_link: "Copier le lien",
+    link_copied: "Copié !",
+    demo_soon: "Démo bientôt disponible",
+    flip_preview: "Aperçu",
 
     /* Experience */
     experience_at: "chez",
@@ -109,13 +119,22 @@ const translations = {
 
     skills_cat_languages: "Languages & Frameworks",
     skills_cat_database: "Databases",
+    skills_cat_architecture: "Architecture & Design",
     skills_cat_office: "Office Suite",
     skills_cat_tools: "Tools & Software",
-    skills_cat_os: "Operating Systems",
+    skills_cat_os: "Systems & Networks",
 
     status_completed: "Completed",
     status_in_progress: "In progress",
+    status_idea: "Idea / Concept",
     status_confidential: "Confidential",
+    badge_hackathon: "DigiCoop Hackathon 2026",
+
+    open_project: "Open",
+    copy_link: "Copy link",
+    link_copied: "Copied!",
+    demo_soon: "Demo coming soon",
+    flip_preview: "Preview",
 
     experience_at: "at",
 
