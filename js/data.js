@@ -30,8 +30,8 @@ const portfolioData = {
   /* ── Hero ── */
   hero: {
     tagline: {
-      fr: "Étudiant en 3ᵉ année de Réseaux Informatiques & Télécommunications à l'IST, je développe des applications web et mobiles complètes. Plusieurs sont déjà en ligne, dont la plateforme du Club Informatique de l'IST et la billetterie de sa masterclass.",
-      en: "Third-year Computer Networks & Telecommunications student at IST, I build complete web and mobile applications. Several are already live, including the IST Computer Club platform and the ticketing site for its masterclass."
+      fr: "Développeur full-stack formé aux réseaux, je construis des applications qui tiennent en production : architecture solide, code testé, déploiement maîtrisé. Trois plateformes livrées en 2026, et l'ambition d'en bâtir de plus grandes.",
+      en: "A full-stack developer trained in networking, I build applications that hold up in production: solid architecture, tested code, controlled deployment. Three platforms shipped in 2026, and the ambition to build bigger ones."
     },
     profileImage: "assets/img/profile.jpg",
     profileAlt: {
