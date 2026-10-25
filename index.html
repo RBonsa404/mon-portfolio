@@ -5,18 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BONSA Abdoul Rachid — Développeur Full-Stack & Étudiant Réseaux & Télécoms</title>
 
+  <!-- Thème appliqué avant le premier rendu, pour éviter un flash -->
+  <script>
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem("portfolio-theme"); } catch (e) {}
+      if (theme !== "light" && theme !== "dark") {
+        theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      }
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+
   <!-- Meta SEO & Referencement -->
-  <meta name="description" content="Portfolio professionnel de BONSA Abdoul Rachid — Étudiant en Réseaux Informatiques & Télécommunications (IST) et Développeur Full-Stack (Java, Spring Boot, NestJS, Next.js, Angular, PostgreSQL). Découvrez mes projets (Momentum, Dedsec, FarafinaCoop) et mon parcours.">
-  <meta name="keywords" content="BONSA Abdoul Rachid, Rachid Bonsa, Développeur Full-Stack, Réseaux Informatiques, Télécommunications, IST Burkina Faso, Spring Boot, Angular, NestJS, Next.js, PostgreSQL, Momentum, Dedsec, FarafinaCoop, SuccèsCo, Cyber-ops">
+  <meta name="description" content="Portfolio de BONSA Abdoul Rachid — Développeur full-stack et étudiant en Réseaux Informatiques & Télécommunications à l'IST (Ouagadougou), Président du Club Informatique de l'IST. Projets web, mobile et embarqué.">
+  <meta name="keywords" content="BONSA Abdoul Rachid, Rachid Bonsa, Développeur Full-Stack, Réseaux Informatiques, Télécommunications, IST Burkina Faso, Club Informatique IST, FasoGuardian, Spring Boot, Angular, Next.js, Flutter">
   <meta name="author" content="BONSA Abdoul Rachid">
   <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0c121c">
   <link rel="canonical" href="https://rbonsa404.github.io/mon-portfolio/">
 
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rbonsa404.github.io/mon-portfolio/">
-  <meta property="og:title" content="BONSA Abdoul Rachid — Développeur Full-Stack & Ingénierie RIT">
-  <meta property="og:description" content="Étudiant RIT & Développeur Full-Stack. Découvez mes réalisations web, architectures microservices, projets hackathon et parcours professionnel.">
+  <meta property="og:title" content="BONSA Abdoul Rachid — Développeur Full-Stack">
+  <meta property="og:description" content="Développeur full-stack, étudiant en Réseaux & Télécoms à l'IST et Président du Club Informatique de l'IST. Projets, expériences et engagement.">
   <meta property="og:image" content="https://rbonsa404.github.io/mon-portfolio/assets/img/profile.jpg">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:locale:alternate" content="en_US">
@@ -24,8 +37,8 @@
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="BONSA Abdoul Rachid — Développeur Full-Stack & Étudiant RIT">
-  <meta name="twitter:description" content="Développeur Full-Stack (Spring Boot, NestJS, Next.js, Angular) & Réseaux. Projets et compétences.">
+  <meta name="twitter:title" content="BONSA Abdoul Rachid — Développeur Full-Stack">
+  <meta name="twitter:description" content="Développeur full-stack (Spring Boot, Angular, Next.js, Flutter) et étudiant en Réseaux & Télécoms.">
   <meta name="twitter:image" content="https://rbonsa404.github.io/mon-portfolio/assets/img/profile.jpg">
 
   <!-- Schema.org JSON-LD (Données Structurées) -->
@@ -40,10 +53,7 @@
     "email": "mailto:rachidbonsa.ai@gmail.com",
     "telephone": "+22664931557",
     "jobTitle": "Développeur Full-Stack & Étudiant en Réseaux Informatiques et Télécommunications",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Révélateur Burkina"
-    },
+    "sameAs": ["https://github.com/RBonsa404"],
     "alumniOf": {
       "@type": "EducationalOrganization",
       "name": "Institut Supérieur de Technologie (IST)"
@@ -51,16 +61,16 @@
     "knowsAbout": [
       "Full-Stack Development",
       "Java Spring Boot",
-      "NestJS",
-      "Next.js",
       "Angular",
+      "Next.js",
+      "Flutter",
       "PostgreSQL",
-      "Microservices Architecture",
       "Computer Networks & Telecommunications",
-      "Cyber-Ops & Security"
+      "Embedded Systems & IoT"
     ],
     "address": {
       "@type": "PostalAddress",
+      "addressLocality": "Ouagadougou",
       "addressCountry": "Burkina Faso"
     }
   }
@@ -72,13 +82,13 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ═══ Preloader — boot terminal ═══ -->
+  <!-- ═══ Preloader ═══ -->
   <div id="preloader" class="preloader" aria-hidden="true">
     <div class="preloader__terminal">
       <span class="preloader__prompt">$</span>
@@ -87,163 +97,202 @@
     </div>
   </div>
 
-  <!-- ═══ Grille de fond (parallaxe) ═══ -->
-  <div class="bg-grid" id="bg-grid" aria-hidden="true"></div>
-
   <!-- ═══ Navigation ═══ -->
   <header class="header" id="header">
     <nav class="nav container" aria-label="Navigation principale" data-i18n-aria="aria_nav">
       <a href="#hero" class="nav__logo" aria-label="BONSA Abdoul Rachid">
-        <span class="nav__logo-prompt">&gt;_</span>
-        <span class="nav__logo-text">AB</span>
+        <span class="nav__logo-mark">AR</span>
+        <span class="nav__logo-text">Bonsa</span>
       </a>
 
-      <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" data-i18n-aria="aria_menu">
-        <span class="nav__toggle-bar"></span>
-        <span class="nav__toggle-bar"></span>
-        <span class="nav__toggle-bar"></span>
-      </button>
-
       <ul class="nav__menu" id="nav-menu">
-        <li><a href="#about" class="nav__link" data-i18n="nav_about">À propos</a></li>
-        <li><a href="#education" class="nav__link" data-i18n="nav_education">Formation</a></li>
-        <li><a href="#skills" class="nav__link" data-i18n="nav_skills">Compétences</a></li>
-        <li><a href="#projects" class="nav__link" data-i18n="nav_projects">Projets</a></li>
+        <li><a href="#about" class="nav__link" data-i18n="nav_about">Profil</a></li>
         <li><a href="#experience" class="nav__link" data-i18n="nav_experience">Expérience</a></li>
+        <li><a href="#projects" class="nav__link" data-i18n="nav_projects">Projets</a></li>
+        <li><a href="#engagement" class="nav__link" data-i18n="nav_engagement">Engagement</a></li>
+        <li><a href="#skills" class="nav__link" data-i18n="nav_skills">Compétences</a></li>
+        <li><a href="#education" class="nav__link" data-i18n="nav_education">Formation</a></li>
         <li><a href="#contact" class="nav__link" data-i18n="nav_contact">Contact</a></li>
-        <li>
-          <button class="lang-toggle" id="lang-toggle" aria-label="Passer en anglais" data-i18n-aria="aria_lang">
-            <span class="lang-toggle__inner">
-              <span class="lang-toggle__label" data-i18n="lang_toggle">EN</span>
-            </span>
-          </button>
-        </li>
+        <li><a href="actualites.html" class="nav__link nav__link--page" data-i18n="nav_news">Actualités</a></li>
       </ul>
+
+      <div class="nav__tools">
+        <button class="tool-btn" id="theme-toggle" type="button" aria-label="Basculer le thème">
+          <svg class="tool-btn__icon tool-btn__icon--sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+          <svg class="tool-btn__icon tool-btn__icon--moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+          </svg>
+        </button>
+        <button class="tool-btn tool-btn--text mono" id="lang-toggle" type="button" aria-label="Passer en anglais" data-i18n-aria="aria_lang">
+          <span data-i18n="lang_toggle">EN</span>
+        </button>
+        <button class="nav__toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-i18n-aria="aria_menu">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+      </div>
     </nav>
   </header>
 
   <main id="main">
 
     <!-- ═══ Hero ═══ -->
-    <section class="hero section" id="hero">
+    <section class="hero" id="hero">
       <div class="container hero__grid">
         <div class="hero__content reveal">
-          <p class="hero__prefix mono" data-i18n="hero_prefix">$ WhoAmI</p>
+          <p class="hero__prefix mono"><span class="hero__prefix-dot" aria-hidden="true"></span><span data-i18n="hero_prefix">Disponible pour un stage ou un emploi</span></p>
           <h1 class="hero__name">
-            <span class="hero__name-line">BONSA</span>
-            <span class="hero__name-line hero__name-line--accent">Abdoul Rachid<span class="cursor-blink" aria-hidden="true">▋</span></span>
+            <span class="hero__name-first">Abdoul Rachid</span>
+            <span class="hero__name-last">BONSA</span>
           </h1>
           <p class="hero__title mono" id="hero-title"></p>
           <p class="hero__tagline" id="hero-tagline"></p>
 
           <div class="hero__cta">
             <a href="#projects" class="btn btn--primary" data-i18n="hero_cta_projects">Voir mes projets</a>
-            <a href="#" class="btn btn--outline" id="hero-cv-btn" data-i18n="hero_cta_cv">Télécharger mon CV</a>
+            <a href="#" class="btn btn--outline" id="hero-cv-btn" download data-i18n="hero_cta_cv">Télécharger mon CV</a>
           </div>
 
-          <!-- Liens sociaux — à activer quand disponibles -->
           <div class="hero__social">
-            <!-- Ajouter lien GitHub ici quand disponible -->
-            <!-- <a href="https://github.com/..." class="hero__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a> -->
-            <!-- Ajouter lien LinkedIn ici quand disponible -->
-            <!-- <a href="https://linkedin.com/in/..." class="hero__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a> -->
+            <a href="https://github.com/RBonsa404" class="hero__social-link mono" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="mailto:rachidbonsa.ai@gmail.com" class="hero__social-link mono">rachidbonsa.ai@gmail.com</a>
+            <a href="actualites.html" class="hero__social-link mono"><span data-i18n="news_teaser">Publications et attestations</span> →</a>
           </div>
         </div>
 
         <div class="hero__visual reveal reveal--delay">
-          <div class="profile-frame">
-            <div class="profile-frame__corner profile-frame__corner--tl"></div>
-            <div class="profile-frame__corner profile-frame__corner--tr"></div>
-            <div class="profile-frame__corner profile-frame__corner--bl"></div>
-            <div class="profile-frame__corner profile-frame__corner--br"></div>
+          <figure class="profile-frame">
             <img
               src="assets/img/profile.jpg"
               alt="Photo de profil de BONSA Abdoul Rachid"
               class="profile-frame__img"
               id="profile-img"
-              width="320"
-              height="400"
+              width="360"
+              height="440"
               loading="eager"
             >
-            <div class="profile-frame__label mono">
+            <figcaption class="profile-frame__label mono">
               <span class="profile-frame__dot"></span>
-              profile.jpg
-            </div>
-          </div>
+              <span id="profile-location">Ouagadougou, Burkina Faso</span>
+            </figcaption>
+          </figure>
         </div>
+      </div>
+
+      <div class="container">
+        <dl class="stats reveal" id="stats"></dl>
       </div>
     </section>
 
     <!-- ═══ À propos ═══ -->
     <section class="section about" id="about">
-      <div class="container">
-        <h2 class="section__title mono reveal" data-i18n="section_about">/* profil */</h2>
-        <div class="about__card reveal">
-          <p class="about__text" id="about-text"></p>
-        </div>
+      <div class="container section__layout">
+        <header class="section__head reveal">
+          <span class="section__index mono">01</span>
+          <h2 class="section__title" data-i18n="section_about">Profil</h2>
+        </header>
+        <div class="about__body reveal" id="about-text"></div>
       </div>
     </section>
 
-    <!-- ═══ Formation ═══ -->
-    <section class="section education" id="education">
-      <div class="container">
-        <h2 class="section__title mono reveal" data-i18n="section_education">// FORMATION</h2>
-
-        <h3 class="subsection__title mono reveal" data-i18n="section_education_academic">Parcours académique</h3>
-        <div class="timeline" id="timeline-academic"></div>
-
-        <h3 class="subsection__title mono reveal subsection__title--spaced" data-i18n="section_education_complementary">Formations complémentaires</h3>
-        <div class="training-grid" id="training-complementary"></div>
-      </div>
-    </section>
-
-    <!-- ═══ Compétences ═══ -->
-    <section class="section skills" id="skills">
-      <div class="container">
-        <h2 class="section__title mono reveal" data-i18n="section_skills">// COMPÉTENCES</h2>
-        <div class="skills-grid" id="skills-grid"></div>
+    <!-- ═══ Expérience ═══ -->
+    <section class="section experience" id="experience">
+      <div class="container section__layout">
+        <header class="section__head reveal">
+          <span class="section__index mono">02</span>
+          <h2 class="section__title" data-i18n="section_experience">Expérience</h2>
+        </header>
+        <div class="entry-list" id="experience-list"></div>
       </div>
     </section>
 
     <!-- ═══ Projets ═══ -->
     <section class="section projects" id="projects">
       <div class="container">
-        <h2 class="section__title mono reveal" data-i18n="section_projects">// PROJETS</h2>
+        <header class="section__head section__head--wide reveal">
+          <span class="section__index mono">03</span>
+          <h2 class="section__title" data-i18n="section_projects">Projets</h2>
+          <p class="section__intro" data-i18n="projects_intro">Une sélection de ce que j'ai conçu, développé ou mis en ligne.</p>
+        </header>
         <div class="projects-grid" id="projects-grid"></div>
       </div>
     </section>
 
-    <!-- ═══ Expérience ═══ -->
-    <section class="section experience" id="experience">
-      <div class="container">
-        <h2 class="section__title mono reveal" data-i18n="section_experience">// EXPÉRIENCE</h2>
-        <div class="experience-list" id="experience-list"></div>
+    <!-- ═══ Engagement ═══ -->
+    <section class="section engagement" id="engagement">
+      <div class="container section__layout">
+        <header class="section__head reveal">
+          <span class="section__index mono">04</span>
+          <h2 class="section__title" data-i18n="section_engagement">Engagement</h2>
+        </header>
+        <div>
+          <div class="entry-list" id="engagement-list"></div>
+          <h3 class="subsection__title mono reveal" data-i18n="section_events">Événements organisés et participations</h3>
+          <ol class="events" id="events-list"></ol>
+        </div>
       </div>
     </section>
 
-    <!-- ═══ Centres d'intérêt ═══ -->
-    <section class="section interests" id="interests">
-      <div class="container">
-        <h2 class="section__title mono reveal" data-i18n="section_interests">// CENTRES D'INTÉRÊT</h2>
-        <div class="interests-grid" id="interests-grid"></div>
+    <!-- ═══ Compétences ═══ -->
+    <section class="section skills" id="skills">
+      <div class="container section__layout">
+        <header class="section__head reveal">
+          <span class="section__index mono">05</span>
+          <h2 class="section__title" data-i18n="section_skills">Compétences</h2>
+        </header>
+        <div>
+          <div class="skills-grid" id="skills-grid"></div>
+          <div class="skills-extra">
+            <div class="reveal">
+              <h3 class="subsection__title mono" data-i18n="section_languages">Langues</h3>
+              <ul class="lang-list" id="languages-list"></ul>
+            </div>
+            <div class="reveal">
+              <h3 class="subsection__title mono" data-i18n="section_interests">Centres d'intérêt</h3>
+              <ul class="interests-list" id="interests-grid"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Formation ═══ -->
+    <section class="section education" id="education">
+      <div class="container section__layout">
+        <header class="section__head reveal">
+          <span class="section__index mono">06</span>
+          <h2 class="section__title" data-i18n="section_education">Formation</h2>
+        </header>
+        <div>
+          <div class="timeline" id="timeline-academic"></div>
+          <h3 class="subsection__title mono reveal" data-i18n="section_education_complementary">Formations complémentaires</h3>
+          <div class="training-grid" id="training-complementary"></div>
+        </div>
       </div>
     </section>
 
     <!-- ═══ Contact ═══ -->
     <section class="section contact" id="contact">
       <div class="container">
-        <h2 class="section__title mono reveal" data-i18n="section_contact">&lt;Contact/&gt;</h2>
-        <p class="section__intro reveal" data-i18n="contact_intro">Un projet, une opportunité ou une question ? Écrivez-moi.</p>
+        <header class="section__head section__head--wide reveal">
+          <span class="section__index mono">07</span>
+          <h2 class="section__title" data-i18n="section_contact">Contact</h2>
+          <p class="section__intro" data-i18n="contact_intro">Un projet, une opportunité ou une question ? Écrivez-moi.</p>
+        </header>
 
         <div class="contact__grid">
           <form class="contact__form reveal" id="contact-form" novalidate>
-            <div class="form-group">
-              <label for="contact-name" class="form-label mono" data-i18n="contact_name">Nom</label>
-              <input type="text" id="contact-name" name="name" class="form-input" required autocomplete="name">
-            </div>
-            <div class="form-group">
-              <label for="contact-email" class="form-label mono" data-i18n="contact_email">Email</label>
-              <input type="email" id="contact-email" name="email" class="form-input" required autocomplete="email">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name" class="form-label mono" data-i18n="contact_name">Nom</label>
+                <input type="text" id="contact-name" name="name" class="form-input" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="contact-email" class="form-label mono" data-i18n="contact_email">Email</label>
+                <input type="email" id="contact-email" name="email" class="form-input" required autocomplete="email">
+              </div>
             </div>
             <div class="form-group">
               <label for="contact-message" class="form-label mono" data-i18n="contact_message">Message</label>
@@ -263,8 +312,12 @@
               <a href="tel:+22664931557" class="contact__info-value link-animated" id="contact-phone-display">+226 64 93 15 57</a>
             </div>
             <div class="contact__info-item">
+              <span class="contact__info-label mono">GitHub</span>
+              <a href="https://github.com/RBonsa404" class="contact__info-value link-animated" target="_blank" rel="noopener noreferrer">github.com/RBonsa404</a>
+            </div>
+            <div class="contact__info-item">
               <span class="contact__info-label mono" data-i18n="contact_location_label">Localisation</span>
-              <span class="contact__info-value" id="contact-location-display">Burkina Faso</span>
+              <span class="contact__info-value" id="contact-location-display">Ouagadougou, Burkina Faso</span>
             </div>
           </div>
         </div>
@@ -274,21 +327,24 @@
     <!-- ═══ Laisser un mot ═══ -->
     <section class="section guestbook" id="guestbook">
       <div class="container">
-        <h2 class="section__title mono reveal" data-i18n="section_guestbook">/* laisser_un_mot */</h2>
-        <p class="section__intro reveal" data-i18n="guestbook_intro">Un mot sympa, un encouragement, une critique constructive ? Laissez une trace.</p>
-
-        <form class="guestbook__form reveal" id="guestbook-form" novalidate>
-          <div class="form-group">
-            <label for="guestbook-name" class="form-label mono" data-i18n="guestbook_name">Votre prénom ou pseudo</label>
-            <input type="text" id="guestbook-name" name="name" class="form-input" required>
+        <div class="guestbook__card reveal">
+          <div>
+            <h2 class="guestbook__title" data-i18n="section_guestbook">Laisser un mot</h2>
+            <p class="section__intro" data-i18n="guestbook_intro">Un mot sympa, un encouragement, une critique constructive ? Laissez une trace.</p>
           </div>
-          <div class="form-group">
-            <label for="guestbook-message" class="form-label mono" data-i18n="guestbook_message">Votre message</label>
-            <textarea id="guestbook-message" name="message" class="form-input form-textarea" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn btn--outline" data-i18n="guestbook_send">Laisser mon mot</button>
-          <p class="form-note form-note--guest" data-i18n="guestbook_note">Votre message sera envoyé par email et ne sera pas publié sur le site.</p>
-        </form>
+          <form class="guestbook__form" id="guestbook-form" novalidate>
+            <div class="form-group">
+              <label for="guestbook-name" class="form-label mono" data-i18n="guestbook_name">Votre prénom ou pseudo</label>
+              <input type="text" id="guestbook-name" name="name" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="guestbook-message" class="form-label mono" data-i18n="guestbook_message">Votre message</label>
+              <textarea id="guestbook-message" name="message" class="form-input form-textarea" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--outline" data-i18n="guestbook_send">Laisser mon mot</button>
+            <p class="form-note" data-i18n="guestbook_note">Votre message sera envoyé par email et ne sera pas publié sur le site.</p>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -301,19 +357,16 @@
         &copy; <span id="footer-year"></span> BONSA Abdoul Rachid —
         <span data-i18n="footer_rights">Tous droits réservés.</span>
       </p>
-      <p class="footer__crafted" data-i18n="footer_crafted">Site conçu et développé par BONSA Abdoul Rachid</p>
       <div class="footer__links">
+        <a href="https://github.com/RBonsa404" class="footer__link link-animated" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="actualites.html" class="footer__link link-animated" data-i18n="nav_news">Actualités</a>
         <a href="#hero" class="footer__link link-animated" data-i18n="footer_back_top">Retour en haut</a>
-        <!-- Ajouter lien GitHub ici quand disponible -->
-        <!-- <a href="https://github.com/..." class="footer__link link-animated" target="_blank" rel="noopener noreferrer">GitHub</a> -->
-        <!-- Ajouter lien LinkedIn ici quand disponible -->
-        <!-- <a href="https://linkedin.com/in/..." class="footer__link link-animated" target="_blank" rel="noopener noreferrer">LinkedIn</a> -->
       </div>
     </div>
   </footer>
 
   <!-- ═══ Bouton retour en haut ═══ -->
-  <button class="back-to-top" id="back-to-top" aria-label="Retour en haut" data-i18n-aria="back_to_top">
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Retour en haut" data-i18n-aria="back_to_top">
     <span class="back-to-top__icon">↑</span>
   </button>
 
